@@ -1,0 +1,62 @@
+// T data = leftCur->data;
+// if (left.search(data) && right.search(data))
+// {
+//     result.insert(data);
+// }
+// leftCur = leftCur->next;
+// rightCur = rightCur->next;
+
+// else if (!thisCur->next)
+// {
+//     Node* temp = new Node(right.head_->data);
+//     temp->next = thisCur->next;
+//     thisCur->next = temp;
+//     needToDeleteFromRight = true;
+// }
+
+Node* temp = new Node(leftCur->data);
+Node* resultCur = result.head_;
+if (!result.head_)
+{
+    result.head_ = temp;
+    resultCur = result.head_;
+}
+else
+{
+    resultCur->next = temp;
+    resultCur = resultCur->next;
+}
+leftCur = leftCur->next;
+rightCur = rightCur->next;
+
+
+
+Node* temp = nullptr;
+if (leftCur->data == rightCur->data)
+{
+    temp = new Node(leftCur->data);
+    leftCur = leftCur->next;
+    rightCur = rightCur->next;
+}
+else if (leftCur->data < rightCur->data)
+{
+    leftCur = leftCur->next;
+    continue;
+}
+else 
+{
+    rightCur = rightCur->next;
+    continue;
+}
+
+Node* resultCur = result.head_;
+if (!result.head_)
+{
+    result.head_ = temp;
+    resultCur = result.head_;
+}
+else
+{
+    resultCur->next = temp;
+    resultCur = resultCur->next;
+}
